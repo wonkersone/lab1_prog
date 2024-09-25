@@ -1,7 +1,12 @@
+package ru.itmo;
+
 import java.util.Random;
 
 
 public class MainLab {
+    public static final String COLORS[] = {"\u001B[31m", "\u001B[33m", "\u001B[32m",
+            "\u001B[36m", "\u001B[34m", "\u001B[35m", "\u001B[31m", "\u001B[33m", "\u001B[32m",
+            "\u001B[36m", "\u001B[34m", "\u001B[35m", "\u001B[31m", "\u001B[33m", "\u001B[32m"};
     public static void main(String[] args) {
         long[] z = new long[12];
         for (int i = 15; i >= 4; i--) {                             //Создать одномерный массив z типа long. Заполнить его числами от 4 до 15 включительно в порядке убывания.
@@ -31,7 +36,7 @@ public class MainLab {
                     w[i][j] = (float) Math.cbrt(Math.pow(((Math.pow(Math.E, x[j]) - 0.5) / (0.25)), Math.tan(x[j]))); // округляем число до 2 знаков после запятой
                 }
                 // В остальных случая выполняем п. 3.3
-                else w[i][j] = (float) Math.pow((((double) 1/2) / Math.pow(Math.E, Math.sin(Math.cos(x[j])))), 3); // округляем число до 2 знаков после запятой
+                else w[i][j] = (float) Math.pow(((1./2) / Math.pow(Math.E, Math.sin(Math.cos(x[j])))), 3); // округляем число до 2 знаков после запятой
 
 
             }
@@ -54,7 +59,8 @@ public class MainLab {
             for (int j = 0; j < 16; j++) {
                 System.out.printf(format, w[i][j]);     //выводим первую строку элементов матрицы
             }
-            System.out.println();                       //пустой принт для переноса на новую строку
+            System.out.println();
         }
+
     }
 }
